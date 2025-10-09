@@ -46,14 +46,14 @@ namespace Grocery.Core.Services
 
         public GroceryListItem? Update(GroceryListItem item)
         {
-            return _groceriesRepository.Update(item); 
+            return _groceriesRepository.Update(item);
         }
 
         private void FillService(List<GroceryListItem> groceryListItems)
         {
             foreach (GroceryListItem g in groceryListItems)
             {
-                g.Product = _productRepository.Get(g.ProductId) ?? new(0, "", 0);
+                g.Product = _productRepository.Get(g.ProductId) ?? new(0, "", 0, 0);
             }
         }
 
